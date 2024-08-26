@@ -1,0 +1,89 @@
+triggers 
+**instructor
+@prevent add intake 
+@prevent update intake 
+@prevent delete intake 
+
+@prevent add track
+@prevent update track
+@prevent delete track
+
+@prevent add student
+@prevent update student
+@prevent delete student
+
+#prevent delete department
+
+
+**training manager
+#prevent delete intake
+#prevent delete track
+
+***student 
+@prevent add question
+@prevent update question
+@prevent delete question
+
+
+
+***************************************************************
+proc
+***instructor
+insert question in his course only
+make exam 
+select student in each exam 
+correction the exam
+
+
+***training manager
+add student
+update student
+delete  student 
+
+add instructors
+update instructors
+delete instructors
+
+add courses
+update courses,
+delete  courses
+
+
+add  instructor_ID in courses
+update instructor_ID in courses
+delete  instructor_ID in courses
+
+add new intake 
+
+add track
+update track
+***************************************************************
+permissions 
+creation users accounts
+ admin 
+training manager 
+3 instructors
+3 students 
+***************************************************************
+views 
+
+instructor
+
+view all students 
+view all questions  for his course only
+***********************************
+training manager
+
+view all students 
+view all instructors
+view all tracks
+view all courses 
+
+*********************
+Documentation for the project 
+**************************
+
+creating schema for each course 
+insert question in python 
+html
+css

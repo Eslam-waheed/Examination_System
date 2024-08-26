@@ -1,0 +1,13 @@
+Views:
+view_all_instructors: This view is designed to provide the training manager with an overview of all instructors. It selects and displays the name, phone number, and email address from the users table.
+
+Stored Procedures:
+add_instructor: This stored procedure adds a new instructor to the database. It inserts a new record into both the users and instructors tables.
+update_instructor: This stored procedure updates the details of an existing instructor in the database. It modifies the records in both the users and instructors tables based on the provided user ID.
+delete_instructor: This stored procedure deletes an instructor from the database. It removes the records from both the users and instructors tables based on the provided user ID.
+add_track: This stored procedure adds a new track to the track table. It inserts a new record with the provided track ID, department ID, and track name. The procedure ensures that the data is correctly added to the table and handles any errors that may occur.
+
+Triggers:
+delete_dpt: This trigger prevents the deletion of a department from the department table. Instead of performing the delete operation, it prints a message indicating that the action is not allowed for the user.
+delete_intake: This trigger prevents the deletion of an intake from the intake table. Similar to the delete_dpt trigger, it prints a message indicating that the action is not allowed. This ensures that the intake data remains intact and prevents any unauthorized deletions.
+delete_track: This trigger prevents the deletion of a track from the track table. It intercepts the delete operation and prints a message indicating that the action is not allowed for the user. This helps protect the track data from accidental or unauthorized deletions.

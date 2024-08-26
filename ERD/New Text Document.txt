@@ -1,0 +1,86 @@
+done- Question
+QuestionID (PK)
+QuestionText
+QuestionType (Multiple choice, True/False, Text)
+CourseID (FK)
+InstructorID (FK)
+
+done- Course
+#CourseID (PK)
+*CourseName
+*Description
+*MaxDegree
+*MinDegree
+
+done- Instructor
+InstructorID (PK)
+InstructorName
+Email
+PhoneNumber
+IsTrainingManager (Boolean)
+
+done- Student
+StudentID (PK)
+StudentName
+Email
+PhoneNumber
+IntakeID (FK)
+BranchID (FK)
+TrackID (FK)
+
+done- Branch
+BranchID (PK)
+BranchName
+
+done- Track
+TrackID (PK)
+TrackName
+DepartmentID (FK)
+
+done- Department
+DepartmentID (PK)
+DepartmentName
+
+done- Intake
+IntakeID (PK)
+IntakeName
+Year
+
+-UserAccount
+UserID (PK)
+Username
+Password
+Role (TrainingManager, Instructor, Student)
+
+done- Exam
+ExamID (PK)
+ExamType (Exam, Corrective)
+IntakeID (FK)
+BranchID (FK)
+TrackID (FK)
+CourseID (FK)
+InstructorID (FK)
+StartTime
+EndTime
+TotalTime
+AllowanceOptions
+
+done- StudentExam
+StudentExamID (PK)
+ExamID (FK)
+StudentID (FK)
+ExamDate
+StartTime
+EndTime
+
+done- StudentAnswer
+StudentAnswerID (PK)
+StudentExamID (FK)
+QuestionID (FK)
+AnswerText
+IsCorrect
+Mark
+
+
+
+

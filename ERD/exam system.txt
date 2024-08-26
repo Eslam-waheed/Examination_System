@@ -1,0 +1,116 @@
+Entities and Attributes
+
+QuestionPool
+QuestionID (PK)
+QuestionText
+QuestionType (Multiple choice, True/False, Text)
+CourseID (FK)
+InstructorID (FK)
+
+MultipleChoiceQuestion
+QuestionID (PK, FK)
+Option1
+Option2
+Option3
+Option4
+CorrectOption
+
+TrueFalseQuestion
+QuestionID (PK, FK)
+CorrectAnswer (True/False)
+
+TextQuestion
+QuestionID (PK, FK)
+BestAcceptedAnswer
+
+Course
+CourseID (PK)
+CourseName
+Description
+MaxDegree
+MinDegree
+
+Instructor
+InstructorID (PK)
+InstructorName
+Email
+PhoneNumber
+IsTrainingManager (Boolean)
+
+Student
+StudentID (PK)
+StudentName
+Email
+PhoneNumber
+IntakeID (FK)
+BranchID (FK)
+TrackID (FK)
+
+Branch
+BranchID (PK)
+BranchName
+
+Track
+TrackID (PK)
+TrackName
+DepartmentID (FK)
+
+Department
+DepartmentID (PK)
+DepartmentName
+
+Intake
+IntakeID (PK)
+IntakeName
+Year
+
+UserAccount
+UserID (PK)
+Username
+Password
+Role (TrainingManager, Instructor, Student)
+
+Exam
+ExamID (PK)
+ExamType (Exam, Corrective)
+IntakeID (FK)
+BranchID (FK)
+TrackID (FK)
+CourseID (FK)
+InstructorID (FK)
+StartTime
+EndTime
+TotalTime
+AllowanceOptions
+
+ExamDetails
+ExamID (PK, FK)
+QuestionID (PK, FK)
+Degree
+
+StudentExam
+StudentExamID (PK)
+ExamID (FK)
+StudentID (FK)
+ExamDate
+StartTime
+EndTime
+
+StudentAnswer
+StudentAnswerID (PK)
+StudentExamID (FK)
+QuestionID (FK)
+AnswerText
+IsCorrect
+Mark
+
+
+
+Relationships
+*Each Instructor can create multiple QuestionPool entries.
+Each Course is taught by one or more Instructor(s), but each class of a course in a year is taught by one Instructor.
+Each QuestionPool entry is linked to a Course and an Instructor.
+Each Exam is linked to a Course, Instructor, Intake, Branch, and Track.
+Each Student belongs to one Intake, Branch, and Track.
+Each StudentExam records the Student, Exam, and the time they took the exam.
+StudentAnswer stores the answers provided by Students for each Exam.
